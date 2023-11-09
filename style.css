@@ -1,50 +1,52 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: 0;
+    border: 0;
 }
 body{
     background:#081b29;
      color: #ededed;
 }
 .header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background: transparent;
     display: flex;
-    justify-content: space-between;
+    padding: 0px 20px; 
     align-items: center;
     z-index: 100;
-
 }
-.logo{
-    font-size: 25px;
-    color: #ededed;
-    text-decoration: none;
-    font-weight: 600;
+header .logo{
+    width: 30%;
+    font-size: 45px;
 }
-.navbar a{
-    font-size: 18px;
-    color: #ededed;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: 3s;
-
+header .menu{
+    display: flex;
+    list-style: none;
+    font-size: 28px;
 }
-navbar a:hover, navbar a:active{
-    color: #00abf0;
-    
+header ul.menu>li{
+    padding: 12px 20px;
+    position: relative;
+}
+header ul.menu>li>ul{
+    position: absolute;
+    list-style: none;
+    top: 42px;
+    width: 170px;
+    display: none;
+    background-color: black;
+}
+header ul.menu>li:hover>ul{
+    display: block;
+}
+header ul.menu>li>ul>li{
+    padding: 10px;
+    border: 1px solid black;
 }
 .home{
-    height: 100vh;
+    height: 900px;
     display: flex;
-    align-items: center;
-    padding: 10%;
+    align-items: top;
+    padding: top 10px;
     justify-content: center;
 }
 .home-content{
@@ -85,7 +87,7 @@ navbar a:hover, navbar a:active{
     letter-spacing: 1px;
 }
 .home-content img{
-    width: 200px;
-    height: 100%;
+    width: 260px;
+    height: 330px;
     justify-content: center;
 }
