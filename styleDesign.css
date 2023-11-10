@@ -1,0 +1,13 @@
+body{
+    background:#081b29;
+     color: #ededed;
+     align-items: center;
+}
+img{
+    width: 300px;
+    height: 400px;
+    align-items: center;
+}
+button{
+   font-weight: 30px; 
+}

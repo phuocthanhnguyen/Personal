@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implements</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleImplement.css">
+</head>
+<body>
+    <div>
+        <label for="">ID :</label>
+        <input type="number" id="id">
+    </div>
+    <div>
+        <label for="">Name :</label>
+        <input type="text" id="name">
+    </div>
+    <div>
+        <button onclick="add()">Submit</button>
+    </div>
+    <table class="table" id="render">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+    <script>
+        var data = [];
+
+        function add(){
+            var item_id = document.getElementById("id").value;
+            var item_name = document.getElementById("name").value;
+
+            var item={
+                Id : item_id,
+                Name : item_name
+            }
+
+            let index = data.findIndex((c)=>c.Id==item.Id)
+            if(index>=0){
+                data.splice(index,1,item);
+            }else{
+                data.push(item);
+            }
+            
+            render();
+            clear();
+        }
+        function render(){
+            table =  ` <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+                </tr>`;
+            for(let i=0;i<data.length;i++){
+                table += 
+                 `<tr>
+                <th>${data[i].Id}</th>
+                <th>${data[i].Name}</th>
+                <th> <button onclick="deleteItem(${data[i].Id})"> Delete</button> </th>
+                <th> <button onclick="editItem(${data[i].Id})"> Edit</button> </th>
+                </tr>`
+            document.getElementById("render").innerHTML = table; 
+            }
+        }
+        function clear(){
+            document.getElementById("id").value="";
+            document.getElementById("name").value="";
+        }
+        function deleteItem(x){
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].Id==x) {
+                    data.splice(i,1);
+                    
+                    render();
+                }
+                
+            }
+        }
+        function editItem(x){
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].Id==x) {
+                    document.getElementById("id").value = data[i].Id;
+                    document.getElementById("name").value = data[i].Name;
+                }
+                
+            }
+        }
+        
+
+    </script> 
+</body>
+</html>
