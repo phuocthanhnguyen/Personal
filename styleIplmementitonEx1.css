@@ -1,0 +1,45 @@
+body{
+    background:#081b29;
+     color: #ededed;
+}
+
+.css-image{
+    height: 240px;
+    width: 250px;
+    justify-self: center;
+    position: relative;
+}
+
+.logo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: bold;
+    font-size: 40px;
+    margin-bottom: 56px;
+}
+.text-heading-primary{
+    font-size: 36px;
+    margin-bottom: 24px;
+    color: #e78229;
+    font-weight: 600;
+}
+.grid-2-cols{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding : 24px;
+}
+text{
+    display: grid;
+    gap: 36px;
+    margin-bottom: 48px;
+}
+
+
+bt2{
+    font-family: 'Courier New', Courier, monospace;
+    color: #555;
+    font-weight: 600;
+    padding: 100px;
+    display: inline-block;
+    margin-right: 50px;
+    border: none;
+}
